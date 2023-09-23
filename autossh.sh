@@ -16,6 +16,9 @@ username="snxsn"
 password="snxsn"
 sshlimiter="600"
 dias="2"
+port="2222"
+
+
 servermessage="<h3><font color='red'>
 Created by Skyn®SN (@mlulinX)
 </font></h3>"
@@ -32,11 +35,10 @@ useradd -e $final -M -s /bin/false -p $pass $username >/dev/null
 echo "$password" >/etc/$username
 echo "$username:$password" | chpasswd
 echo "$username $sshlimiter" >>/root/usuarios.db
+echo "Port $port" >>/etc/ssh/sshd_config
 
 
-echo "Port 2222" >>/etc/ssh/sshd_config
 #sed -i "/Port 22/d" /etc/ssh/sshd_config
-/etc/init.d/ssh restart
 
 
 echo ""
@@ -47,7 +49,7 @@ echo ""
 echo -e "\033[1;37m◈─────⪧ SSH ACCOUNT ⪦─────◈"
 echo ""
 echo -e "\033[1;32m◈ Host / IP   :⪧  \033[1;31m$IP"
-echo -e "\033[1;32m◈ Port        :⪧  \033[1;31m2222 or 22"
+echo -e "\033[1;32m◈ Port        :⪧  \033[1;31m$port"
 echo -e "\033[1;32m◈ Username    :⪧  \033[1;31m$username"
 echo -e "\033[1;32m◈ Password    :⪧  \033[1;31m$password"
 echo -e "\033[1;32m◈ Login Limit :⪧  \033[1;31m$sshlimiter"
