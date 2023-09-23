@@ -36,7 +36,7 @@ echo "$username $sshlimiter" >>/root/usuarios.db
 
 echo "Port 2222" >>/etc/ssh/sshd_config
 #sed -i "/Port 22/d" /etc/ssh/sshd_config
-service ssh restart
+/etc/init.d/ssh restart
 
 
 echo ""
