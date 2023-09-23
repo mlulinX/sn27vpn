@@ -23,7 +23,8 @@ Created by Skyn®SN (@mlulinX)
 
 [[ $EUID -ne 0 ]] && echo -e "${red}Error: ${plain} You must use root user to run this script!\n" && exit 1
 
-
+sudo apt update
+clear
 
 
 sed -i 's/#\?AllowTcpForwarding .*/AllowTcpForwarding yes/' /etc/ssh/sshd_config && sed -i 's/#\?X11Forwarding .*/X11Forwarding yes/' /etc/ssh/sshd_config && sed -i 's/#\?PasswordAuthentication .*/PasswordAuthentication yes/' /etc/ssh/sshd_config && sed -i 's/#\?PermitEmptyPasswords .*/PermitEmptyPasswords no/' /etc/ssh/sshd_config && sed -i 's/#\?Banner .*/Banner \/etc\/ssh\/gcp_skyn/' /etc/ssh/sshd_config && sed -i 's/#\?PermitRootLogin .*/PermitRootLogin no/' /etc/ssh/sshd_config  && /etc/init.d/ssh restart;
@@ -40,11 +41,6 @@ useradd -e $final -M -s /bin/false -p $pass $username >/dev/null
 echo "$password" >/etc/$username
 echo "$username:$password" | chpasswd
 echo "$username $sshlimiter" >>/root/usuarios.db
-
-
-sudo apt update && upgrade -y
-clear
-
 
 
 echo ""
