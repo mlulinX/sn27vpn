@@ -23,14 +23,14 @@ servermessage="<h3><font color='red'>
 Created by Skyn®SN | https://t.me/mlulinX
 </font></h3>"
 
-apt update && apt-get install openssh-server
+apt update
 
 ulimit -n 51200 && sysctl -p
 
 [[ $EUID -ne 0 ]] && echo -e "${red}Error: ${plain} You must use root user to run this script!\n" && exit 1
 
 
-sed -i 's/#\?AllowTcpForwarding .*/AllowTcpForwarding yes/' /etc/ssh/sshd_config && sed -i 's/#\?X11Forwarding .*/X11Forwarding yes/' /etc/ssh/sshd_config && sed -i 's/#\?PasswordAuthentication .*/PasswordAuthentication yes/' /etc/ssh/sshd_config && sed -i 's/#\?PermitEmptyPasswords .*/PermitEmptyPasswords no/' /etc/ssh/sshd_config && sed -i 's/#\?Banner .*/Banner \/etc\/ssh\/gcp_skyn/' /etc/ssh/sshd_config && sed -i 's/#\?PermitRootLogin .*/PermitRootLogin no/' /etc/ssh/sshd_config  && sed -i 's/#\?UseDNS .*/UseDNS no/' /etc/ssh/sshd_config && sed -i 's/#\?Compression .*/Compression delayed/' /etc/ssh/sshd_config && sed -i 's/#\?ForwardX11Trusted .*/ForwardX11Trusted yes/' /etc/ssh/sshd_config &&  sed -i 's/#\?ServerAliveInterval .*/ServerAliveInterval 180/' /etc/ssh/sshd_config && /etc/init.d/ssh restart;
+sed -i 's/#\?AllowTcpForwarding .*/AllowTcpForwarding yes/' /etc/ssh/sshd_config && sed -i 's/#\?X11Forwarding .*/X11Forwarding yes/' /etc/ssh/sshd_config && sed -i 's/#\?PasswordAuthentication .*/PasswordAuthentication yes/' /etc/ssh/sshd_config && sed -i 's/#\?PermitEmptyPasswords .*/PermitEmptyPasswords no/' /etc/ssh/sshd_config && sed -i 's/#\?Banner .*/Banner \/etc\/ssh\/gcp_skyn/' /etc/ssh/sshd_config && sed -i 's/#\?PermitRootLogin .*/PermitRootLogin yes/' /etc/ssh/sshd_config  && sed -i 's/#\?UseDNS .*/UseDNS no/' /etc/ssh/sshd_config && sed -i 's/#\?Compression .*/Compression delayed/' /etc/ssh/sshd_config && sed -i 's/#\?ForwardX11Trusted .*/ForwardX11Trusted yes/' /etc/ssh/sshd_config &&  sed -i 's/#\?ServerAliveInterval .*/ServerAliveInterval 120/' /etc/ssh/sshd_config && /etc/init.d/ssh restart;
 
 
 echo "$servermessage" | tee /etc/ssh/gcp_skyn >/dev/null
@@ -55,25 +55,7 @@ fun_bar() {
 		touch $HOME/fim
 	) >/dev/null 2>&1 &
 }
-[[ $(grep -wc mlocate /var/lib/dpkg/statoverride) != '0' ]] && sed -i '/mlocate/d' /var/lib/dpkg/statoverride
-clear
-echo ""
-echo -e "\033[1;32m             ◇ Updating packages\033[0m"
-echo ""
-fun_bar 'apt-get update -y' 'apt-get upgrade -y'
-echo ""
-echo -e "\033[1;32m    ◇ Fixing dependency issues"
-echo""
-fun_bar 'apt-get -f install'
-echo""
-echo -e "\033[1;32m          ◇ Removing useless packages"
-echo ""
-fun_bar 'apt-get autoremove -y' 'apt-get autoclean -y'
-echo ""
-echo -e "\033[1;32m      ◇  Removing problem packages"
-echo ""
-fun_bar 'apt-get -f remove -y' 'apt-get clean -y'
-clear
+
 
 echo ""
 
@@ -110,9 +92,7 @@ aguarde
 sleep 1
 clear
 
-echo "Port $port" >>/etc/ssh/sshd_config
-
-
+echo "Port 22222" >>/etc/ssh/sshd_config >/dev/null 2>&1
 
 echo ""
 
