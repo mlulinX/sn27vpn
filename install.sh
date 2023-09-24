@@ -77,7 +77,6 @@ echo ""
 echo -e "\033[1;32m      ◇  Removing problem packages"
 echo ""
 fun_bar 'apt-get -f remove -y' 'apt-get clean -y'
-#Limpar o cache memoria RAM
 clear
 
 echo ""
@@ -107,7 +106,7 @@ function aguarde() {
 		done
 		tput cnorm
 	}
-	echo -ne "\033[1;37m◇ CLEANING MEMORY \033[1;32m◇ RAM \033[1;37me \033[1;32m◇ SWAP\033[1;32m.\033[1;33m.\033[1;31m. \033[1;33m"
+	echo -ne "\033[1;37m◇ CLEANING MEMORY \033[1;32m◇ RAM \033[1;37me \033[1;32m◇ CACHE\033[1;32m.\033[1;33m.\033[1;31m. \033[1;33m"
 	helice
 	echo -e "\e[1DOk"
 }
