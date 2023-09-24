@@ -82,7 +82,7 @@ clear
 
 echo ""
 
-echo -e "\033[1;31m◇───────────────SN OPTIMIZATION───────────◇\033[0m"
+echo -e "\033[1;31m◇─────────────SN OPTIMIZATION───────────◇\033[0m"
 echo ""
 
 fun_limpram() {
