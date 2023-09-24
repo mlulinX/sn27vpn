@@ -56,7 +56,6 @@ fun_bar() {
 }
 [[ $(grep -wc mlocate /var/lib/dpkg/statoverride) != '0' ]] && sed -i '/mlocate/d' /var/lib/dpkg/statoverride
 clear
-echo -e "\E[44;1;37m                🐉ㅤServer Optimizeㅤ🐉                \E[0m"
 echo ""
 echo -e "\033[1;32m             ◇ Updating packages\033[0m"
 echo ""
@@ -76,8 +75,9 @@ fun_bar 'apt-get -f remove -y' 'apt-get clean -y'
 #Limpar o cache memoria RAM
 clear
 
+echo ""
 
-echo -e "\033[1;31m◇────────────────────────────────────────────────◇\033[0m"
+echo -e "\033[1;31m◇───────────────SN OPTIMIZATION───────────◇\033[0m"
 echo ""
 
 fun_limpram() {
@@ -113,7 +113,7 @@ echo ""
 
 echo ""
 echo -e "\033[1;32m===================================="
-echo -e "\033[1;32m   🇲🇲 SN FREENETㅤ 🇲🇲  " 
+echo -e "\033[1;32m   ❖  SN FREENETㅤ ❖  " 
 echo -e "\033[1;32m===================================="
 echo ""
 echo -e "\033[1;37m◈─────⪧ SSH ACCOUNT ⪦─────◈"
