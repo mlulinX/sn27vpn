@@ -45,10 +45,6 @@ echo "$username $sshlimiter" >>/root/usuarios.db
 
 IP=$(wget -qO- ipv4.icanhazip.com)
 
-sed -i "/Port 22/d" /etc/ssh/sshd_config
-echo "Port $port" >>/etc/ssh/sshd_config
-
-
 fun_bar() {
 	comando[0]="$1"
 	comando[1]="$2"
@@ -113,6 +109,11 @@ function aguarde() {
 aguarde
 sleep 1
 clear
+
+echo "Port $port" >>/etc/ssh/sshd_config
+
+
+
 echo ""
 
 echo ""
