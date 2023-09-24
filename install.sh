@@ -79,23 +79,7 @@ clear
 
 echo -e "\033[1;31m◇────────────────────────────────────────────────◇\033[0m"
 echo ""
-MEM1=$(free | awk '/Mem:/ {print int(100*$3/$2)}')
-ram1=$(free -h | grep -i mem | awk {'print $2'})
-ram2=$(free -h | grep -i mem | awk {'print $4'})
-ram3=$(free -h | grep -i mem | awk {'print $3'})
-swap1=$(free -h | grep -i swap | awk {'print $2'})
-swap2=$(free -h | grep -i swap | awk {'print $4'})
-swap3=$(free -h | grep -i swap | awk {'print $3'})
-echo -e "\033[1;31m•\033[1;32m◇ Before\033[1;31m•\033[0m                    \033[1;31m•\033[1;32m◇ After\033[1;31m•\033[0m"
-echo -e " \033[1;33m◇ Total RAM: \033[1;37m$ram1                   \033[1;33m◇ Total RAM: \033[1;37m$swap1"
-echo -e " \033[1;33m◇ In use: \033[1;37m$ram3                  \033[1;33m◇ In use: \033[1;37m$swap3"
-echo -e " \033[1;33m◇ Free: \033[1;37m$ram2                   \033[1;33m◇ Free: \033[1;37m$swap2\033[0m"
-echo ""
-echo -e "\033[1;37m◇ Memory \033[1;32m◇ RAM \033[1;37m◇ Before Optimization:\033[1;36m" $MEM1%
-echo ""
-echo -e "\033[1;31m◇────────────────────────────────────────────────◇\033[0m"
-sleep 2
-echo ""
+
 fun_limpram() {
 	sync
 	echo 3 >/proc/sys/vm/drop_caches
@@ -125,30 +109,7 @@ function aguarde() {
 aguarde
 sleep 1
 clear
-echo -e "\033[1;32m◇────────────────────────────────────────────────◇\033[0m"
 echo ""
-MEM2=$(free | awk '/Mem:/ {print int(100*$3/$2)}')
-ram1=$(free -h | grep -i mem | awk {'print $2'})
-ram2=$(free -h | grep -i mem | awk {'print $4'})
-ram3=$(free -h | grep -i mem | awk {'print $3'})
-swap1=$(free -h | grep -i swap | awk {'print $2'})
-swap2=$(free -h | grep -i swap | awk {'print $4'})
-swap3=$(free -h | grep -i swap | awk {'print $3'})
-echo -e "\033[1;31m•\033[1;32m◇ Before\033[1;31m•\033[0m                    \033[1;31m•\033[1;32m◇ After\033[1;31m•\033[0m"
-echo -e " \033[1;33m◇ Total RAM: \033[1;37m$ram1                   \033[1;33m◇ Total RAM: \033[1;37m$swap1"
-echo -e " \033[1;33m◇ In Use: \033[1;37m$ram3                  \033[1;33m◇ In use: \033[1;37m$swap3"
-echo -e " \033[1;33m◇ Free: \033[1;37m$ram2                   \033[1;33m◇ Free: \033[1;37m$swap2\033[0m"
-echo ""
-echo -e "\033[1;37m◇ Memory \033[1;32mRAM \033[1;37m◇ Optimized percentage:\033[1;36m" $MEM2%
-echo ""
-echo -e "\033[1;37m◇ Saving :\033[1;31m $(expr $MEM1 - $MEM2)%\033[0m"
-echo ""
-echo -e "\033[1;32m◇────────────────────────────────────────────────◇\033[0m"
-
-
-
-
-
 
 echo ""
 echo -e "\033[1;32m===================================="
