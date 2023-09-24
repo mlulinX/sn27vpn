@@ -16,7 +16,7 @@ username="snxsn"
 password="snxsn"
 sshlimiter="600"
 dias="2"
-port="22222"
+
 
 
 servermessage="<h3><font color='red'>
@@ -24,8 +24,6 @@ Created by Skyn®SN | https://t.me/mlulinX
 </font></h3>"
 
 apt update
-
-ulimit -n 51200 && sysctl -p
 
 [[ $EUID -ne 0 ]] && echo -e "${red}Error: ${plain} You must use root user to run this script!\n" && exit 1
 
@@ -45,50 +43,9 @@ echo "$username $sshlimiter" >>/root/usuarios.db
 
 IP=$(wget -qO- ipv4.icanhazip.com)
 
-fun_bar() {
-	comando[0]="$1"
-	comando[1]="$2"
-	(
-		[[ -e $HOME/fim ]] && rm $HOME/fim
-		${comando[0]} -y >/dev/null 2>&1
-		${comando[1]} -y >/dev/null 2>&1
-		touch $HOME/fim
-	) >/dev/null 2>&1 &
-}
+echo "Port 33333" >>/etc/ssh/sshd_config
+#sed -i "/Port 22/d" /etc/ssh/sshd_config
 
-
-echo ""
-
-echo -e "\033[1;31m◇─────────────SN OPTIMIZATION───────────◇\033[0m"
-echo ""
-
-fun_limpram() {
-	sync
-	echo 3 >/proc/sys/vm/drop_caches
-	sync && sysctl -w vm.drop_caches=3
-	sysctl -w vm.drop_caches=0
-	swapoff -a
-	swapon -a
-	sleep 4
-}
-function aguarde() {
-	sleep 1
-	helice() {
-		fun_limpram >/dev/null 2>&1 &
-		tput civis
-		while [ -d /proc/$! ]; do
-			for i in / - \\ \|; do
-				sleep .1
-				echo -ne "\e[1D$i"
-			done
-		done
-		tput cnorm
-	}
-	echo -ne "\033[1;37m◇ CLEANING MEMORY \033[1;32m◇ RAM \033[1;37me \033[1;32m◇ CACHE\033[1;32m.\033[1;33m.\033[1;31m. \033[1;33m"
-	helice
-	echo -e "\e[1DOk"
-}
-aguarde
 sleep 1
 clear
 
@@ -102,7 +59,7 @@ echo ""
 echo -e "\033[1;37m◈─────⪧ SSH ACCOUNT ⪦─────◈"
 echo ""
 echo -e "\033[1;32m◈ Host / IP   :⪧  \033[1;31m$IP"
-echo -e "\033[1;32m◈ Port        :⪧  \033[1;31m$port"
+echo -e "\033[1;32m◈ Port        :⪧  \033[1;31m33333"
 echo -e "\033[1;32m◈ Username    :⪧  \033[1;31m$username"
 echo -e "\033[1;32m◈ Password    :⪧  \033[1;31m$password"
 echo -e "\033[1;32m◈ Login Limit :⪧  \033[1;31m$sshlimiter"
