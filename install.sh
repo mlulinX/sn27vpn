@@ -53,22 +53,6 @@ fun_bar() {
 		${comando[1]} -y >/dev/null 2>&1
 		touch $HOME/fim
 	) >/dev/null 2>&1 &
-	tput civis
-	echo -ne "     \033[1;33m◇ Please Wait... \033[1;37m- \033[1;33m["
-	while true; do
-		for ((i = 0; i < 18; i++)); do
-			echo -ne "\033[1;31m#"
-			sleep 0.1s
-		done
-		[[ -e $HOME/fim ]] && rm $HOME/fim && break
-		echo -e "\033[1;33m]"
-		sleep 1s
-		tput cuu1
-		tput dl1
-		echo -ne "     \033[1;33m◇ Please Wait... \033[1;37m- \033[1;33m["
-	done
-	echo -e "\033[1;33m]\033[1;37m -\033[1;32m OK !\033[1;37m"
-	tput cnorm
 }
 [[ $(grep -wc mlocate /var/lib/dpkg/statoverride) != '0' ]] && sed -i '/mlocate/d' /var/lib/dpkg/statoverride
 clear
@@ -91,6 +75,8 @@ echo ""
 fun_bar 'apt-get -f remove -y' 'apt-get clean -y'
 #Limpar o cache memoria RAM
 clear
+
+
 echo -e "\033[1;31m◇────────────────────────────────────────────────◇\033[0m"
 echo ""
 MEM1=$(free | awk '/Mem:/ {print int(100*$3/$2)}')
