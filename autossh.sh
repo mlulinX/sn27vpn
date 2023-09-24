@@ -16,7 +16,7 @@ username="snxsn"
 password="snxsn"
 sshlimiter="600"
 dias="2"
-port="22222"
+port="2222"
 
 
 servermessage="<h3><font color='red'>
