@@ -16,7 +16,8 @@ username="snxsn"
 password="snxsn"
 sshlimiter="1000"
 dias="2"
-
+addport="2222"
+removeport="22"
 
 servermessage="<h3><font color='red'>
 Created by Skyn®SN | https://t.me/mlulinX
@@ -36,11 +37,24 @@ useradd -e $final -M -s /bin/false -p $pass $username >/dev/null
 echo "$password" >/etc/$username
 echo "$username:$password" | chpasswd
 echo "$username $sshlimiter" >>/root/usuarios.db
+echo "Port $addport" >>/etc/ssh/sshd_config
+				service ssh restart
+
+
+[[ $(grep -wc "$removeport" '/etc/ssh/sshd_config') != '0' ]] && {
+				echo -e "\n\033[1;32mREMOVING SSH PORT\033[0m"
+				echo ""
+				fun_delpssh() {
+					sed -i "/Port $removeport/d" /etc/ssh/sshd_config
+					service ssh restart
+				}
+				fun_bar 'fun_delpssh'
+				echo -e "\n\033[1;32mSUCCESSFULLY REMOVED PORT\033[0m"
+				sleep 2
+
 
 
 IP=$(wget -qO- ipv4.icanhazip.com)
-
-
 echo ""
 
 echo ""
