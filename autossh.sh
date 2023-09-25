@@ -18,6 +18,9 @@ sshlimiter="600"
 dias="2"
 
 
+apt-get update && apt-get install openssh-server && apt-get install openssh-client
+
+
 servermessage="<h3><font color='red'>
 Created by https://t.me/mlulinX
 </font></h3>"
@@ -36,8 +39,10 @@ echo "$password" >/etc/$username
 echo "$username:$password" | chpasswd
 echo "$username $sshlimiter" >>/root/usuarios.db
 
+apt-get install filezilla
+clear
 
-echo "Port 33333" >>/etc/ssh/sshd_config
+sed -i 's/#\?Port .*/Port 990/' /etc/ssh/sshd_config && systemctl restart sshd;
 #sed -i "/Port 22/d" /etc/ssh/sshd_config
 
 
@@ -49,7 +54,7 @@ echo ""
 echo -e "\033[1;37m◈─────⪧ SSH ACCOUNT ⪦─────◈"
 echo ""
 echo -e "\033[1;32m◈ Host / IP   :⪧  \033[1;31m$IP"
-echo -e "\033[1;32m◈ Port        :⪧  \033[1;31m33333"
+echo -e "\033[1;32m◈ Port        :⪧  \033[1;31m990"
 echo -e "\033[1;32m◈ Username    :⪧  \033[1;31m$username"
 echo -e "\033[1;32m◈ Password    :⪧  \033[1;31m$password"
 echo -e "\033[1;32m◈ Login Limit :⪧  \033[1;31m$sshlimiter"
