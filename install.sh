@@ -40,60 +40,6 @@ echo "$username $sshlimiter" >>/root/usuarios.db
 
 IP=$(wget -qO- ipv4.icanhazip.com)
 
-fun_bar() {
-	comando[0]="$1"
-	comando[1]="$2"
-	(
-		[[ -e $HOME/fim ]] && rm $HOME/fim
-		${comando[0]} -y >/dev/null 2>&1
-		${comando[1]} -y >/dev/null 2>&1
-		touch $HOME/fim
-	) >/dev/null 2>&1 &
-}
-
-
-echo ""
-
-echo -e "\033[1;31m◇─────────────SN OPTIMIZATION───────────◇\033[0m"
-echo ""
-
-fun_limpram() {
-	sync
-	echo 3 >/proc/sys/vm/drop_caches
-	sync && sysctl -w vm.drop_caches=3
-	sysctl -w vm.drop_caches=0
-	swapoff -a
-	swapon -a
-	sleep 4
-}
-function aguarde() {
-	sleep 1
-	helice() {
-		fun_limpram >/dev/null 2>&1 &
-		tput civis
-		while [ -d /proc/$! ]; do
-			for i in / - \\ \|; do
-				sleep .1
-				echo -ne "\e[1D$i"
-			done
-		done
-		tput cnorm
-	}
-	echo -ne "\033[1;37m◇ CLEANING MEMORY \033[1;32m◇ RAM \033[1;37me \033[1;32m◇ CACHE\033[1;32m.\033[1;33m.\033[1;31m. \033[1;33m"
-	helice
-	echo -e "\e[1DOk"
-}
-aguarde
-sleep 1
-clear
-
-sed -i "/Port 990" /etc/ssh/sshd_config >/dev/null 2>&1
-
-/etc/init.d/ssh restart
-
-sleep 2
-
-
 
 echo ""
 
