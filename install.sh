@@ -22,7 +22,7 @@ servermessage="<h3><font color='red'>
 Created by Skyn®SN | https://t.me/mlulinX
 </font></h3>"
 
-#apt-get update && apt-get upgrade -n && apt-get install openssh-server && apt-get install openssh-client
+apt-get update && apt-get install openssh-server && apt-get install openssh-client
 
 [[ $EUID -ne 0 ]] && echo -e "${red}Error: ${plain} You must use root user to run this script!\n" && exit 1
 
