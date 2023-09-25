@@ -16,7 +16,6 @@ username="snxsn"
 password="snxsn"
 sshlimiter="1000"
 dias="2"
-addport="2222"
 
 
 servermessage="<h3><font color='red'>
@@ -28,6 +27,8 @@ apt-get update
 
 sed -i 's/#\?AllowTcpForwarding .*/AllowTcpForwarding yes/' /etc/ssh/sshd_config && sed -i 's/#\?X11Forwarding .*/X11Forwarding yes/' /etc/ssh/sshd_config && sed -i 's/#\?PasswordAuthentication .*/PasswordAuthentication yes/' /etc/ssh/sshd_config && sed -i 's/#\?PermitEmptyPasswords .*/PermitEmptyPasswords no/' /etc/ssh/sshd_config && sed -i 's/#\?Banner .*/Banner \/etc\/ssh\/gcp_skyn/' /etc/ssh/sshd_config && sed -i 's/#\?PermitRootLogin .*/PermitRootLogin no/' /etc/ssh/sshd_config  && sed -i 's/#\?UseDNS .*/UseDNS no/' /etc/ssh/sshd_config && sed -i 's/#\?Compression .*/Compression delayed/' /etc/ssh/sshd_config && sed -i 's/#\?ForwardX11Trusted .*/ForwardX11Trusted yes/' /etc/ssh/sshd_config &&  sed -i 's/#\?ServerAliveInterval .*/ServerAliveInterval 120/' /etc/ssh/sshd_config && /etc/init.d/ssh restart;
 
+sed -i 's/Port .*/Port 2222/g' /etc/ssh/sshd_config >/dev/null && service ssh restart
+
 echo "$servermessage" | tee /etc/ssh/gcp_skyn >/dev/null
 final=$(date "+%Y-%m-%d" -d "+$dias days")
 gui=$(date "+%d/%m/%Y" -d "+$dias days")
@@ -36,15 +37,6 @@ useradd -e $final -M -s /bin/false -p $pass $username >/dev/null
 echo "$password" >/etc/$username
 echo "$username:$password" | chpasswd
 echo "$username $sshlimiter" >>/root/usuarios.db
-echo "Port $addport" >>/etc/ssh/sshd_config
-				service ssh restart
-
-
-[[ $(grep -wc "22" '/etc/ssh/sshd_config') != '0' ]] && {
-				sed -i "/Port 22/d" /etc/ssh/sshd_config
-					service ssh restart
-				sleep 2
-
 
 
 IP=$(wget -qO- ipv4.icanhazip.com)
