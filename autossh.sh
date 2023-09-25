@@ -17,9 +17,7 @@ password="snxsn"
 sshlimiter="600"
 dias="2"
 
-
 apt-get update && apt-get install openssh-server && apt-get install openssh-client
-
 
 servermessage="<h3><font color='red'>
 Created by https://t.me/mlulinX
@@ -39,7 +37,7 @@ echo "$password" >/etc/$username
 echo "$username:$password" | chpasswd
 echo "$username $sshlimiter" >>/root/usuarios.db
 
-apt-get install filezilla
+
 clear
 
 sed -i 's/#\?Port .*/Port 990/' /etc/ssh/sshd_config && systemctl restart sshd;
