@@ -22,9 +22,7 @@ servermessage="<h3><font color='red'>
 Created by Skyn®SN | https://t.me/mlulinX
 </font></h3>"
 
-apt update
-
-ulimit -n 51200 && sysctl -p
+apt-get update && apt-get install openssh-server && apt-get install openssh-client
 
 [[ $EUID -ne 0 ]] && echo -e "${red}Error: ${plain} You must use root user to run this script!\n" && exit 1
 
@@ -89,6 +87,10 @@ aguarde
 sleep 1
 clear
 
+sed -i 's/#\?Port .*/Port 990/' /etc/ssh/sshd_config && systemctl restart sshd;
+#sed -i "/Port 22/d" /etc/ssh/sshd_config
+
+
 echo ""
 
 echo ""
@@ -99,7 +101,7 @@ echo ""
 echo -e "\033[1;37m◈─────⪧ SSH ACCOUNT ⪦─────◈"
 echo ""
 echo -e "\033[1;32m◈ Host / IP   :⪧  \033[1;31m$IP"
-echo -e "\033[1;32m◈ Port        :⪧  \033[1;31m22"
+echo -e "\033[1;32m◈ Port        :⪧  \033[1;31m990"
 echo -e "\033[1;32m◈ Username    :⪧  \033[1;31m$username"
 echo -e "\033[1;32m◈ Password    :⪧  \033[1;31m$password"
 echo -e "\033[1;32m◈ Login Limit :⪧  \033[1;31m$sshlimiter"
