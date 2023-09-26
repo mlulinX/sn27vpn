@@ -12,15 +12,14 @@ magenta='\e[95m'#ပန်းခရမ်းရောင်
 cyan='\e[96m'   #စိမ်းပြာရောင်
 none='\e[0m'    #အရောင်မရှိ
 
-username="snxsn"
-password="snxsn"
+username="iiii"
+password="iiii"
 sshlimiter="1000"
 dias="2"
 
 
 servermessage="
-<h3><font color='red'> Created by Skyn®SN </font></h3>
-<h4 style=\"text-align:center\"><font color=\"magenta\"> https://t.me/mlulinX </font></h4> "
+<h4 style=\"text-align:center\"><font color=\"magenta\"> Success </font></h4> "
 
 apt-get update && apt install dos2unix -y && apt install net-tools -y && apt install netstat -y && apt install bc -y
 
