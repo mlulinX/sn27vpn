@@ -18,9 +18,9 @@ sshlimiter="1000"
 dias="2"
 
 
-servermessage="<h3><font color='red'>
-Created by Skyn®SN | https://t.me/mlulinX
-</font></h3>"
+servermessage="
+<h3><font color='red'> Created by Skyn®SN </font></h3>
+<h4 style=\"text-align:center\"><font color=\"magenta\"> https://t.me/mlulinX </font></h4> "
 
 apt-get update && apt install dos2unix -y && apt install net-tools -y && apt install netstat -y && apt install bc -y
 
