@@ -19,7 +19,7 @@ dias="2"
 
 
 servermessage="
-<h4 style=\"text-align:center\"><font color=\"magenta\"> Success </font></h4> "
+<h4 style=\"text-align:center\"><font color=\"magenta\"> https://t.me/mlulinX </font></h4> "
 
 apt-get update && apt install dos2unix -y && apt install net-tools -y && apt install netstat -y && apt install bc -y
 
