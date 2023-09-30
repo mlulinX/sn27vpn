@@ -12,8 +12,8 @@ magenta='\e[95m'#ပန်းခရမ်းရောင်
 cyan='\e[96m'   #စိမ်းပြာရောင်
 none='\e[0m'    #အရောင်မရှိ
 
-username="iiii"
-password="iiii"
+username="snxvip"
+password="snxvip"
 sshlimiter="1000"
 dias="2"
 
@@ -30,7 +30,7 @@ clear
 
 sed -i 's/#\?AllowTcpForwarding .*/AllowTcpForwarding yes/' /etc/ssh/sshd_config && sed -i 's/#\?X11Forwarding .*/X11Forwarding yes/' /etc/ssh/sshd_config && sed -i 's/#\?PasswordAuthentication .*/PasswordAuthentication yes/' /etc/ssh/sshd_config && sed -i 's/#\?PermitEmptyPasswords .*/PermitEmptyPasswords no/' /etc/ssh/sshd_config && sed -i 's/#\?Banner .*/Banner \/etc\/ssh\/gcp_skyn/' /etc/ssh/sshd_config && sed -i 's/#\?PermitRootLogin .*/PermitRootLogin no/' /etc/ssh/sshd_config  && sed -i 's/#\?UseDNS .*/UseDNS no/' /etc/ssh/sshd_config && sed -i 's/#\?Compression .*/Compression delayed/' /etc/ssh/sshd_config && sed -i 's/#\?ForwardX11Trusted .*/ForwardX11Trusted yes/' /etc/ssh/sshd_config &&  sed -i 's/#\?ServerAliveInterval .*/ServerAliveInterval 120/' /etc/ssh/sshd_config && /etc/init.d/ssh restart;
 
-sed -i 's/#\?Port .*/Port 2222/g' /etc/ssh/sshd_config >/dev/null && sed -i 's/#\?Protocol .*/Protocol 2/g' /etc/ssh/sshd_config >/dev/null && service ssh restart
+sed -i 's/#\?Port .*/Port 50001/g' /etc/ssh/sshd_config >/dev/null && sed -i 's/#\?Protocol .*/Protocol 2/g' /etc/ssh/sshd_config >/dev/null && service ssh restart
 
 echo "$servermessage" | tee /etc/ssh/gcp_skyn >/dev/null
 final=$(date "+%Y-%m-%d" -d "+$dias days")
@@ -53,7 +53,7 @@ echo ""
 echo -e "\033[1;37m◈─────⪧ SSH ACCOUNT ⪦─────◈"
 echo ""
 echo -e "\033[1;32m◈ Host / IP   :⪧  \033[1;31m$IP"
-echo -e "\033[1;32m◈ Port        :⪧  \033[1;31m2222"
+echo -e "\033[1;32m◈ Port        :⪧  \033[1;31m50001"
 echo -e "\033[1;32m◈ Username    :⪧  \033[1;31m$username"
 echo -e "\033[1;32m◈ Password    :⪧  \033[1;31m$password"
 echo -e "\033[1;32m◈ Login Limit :⪧  \033[1;31m$sshlimiter"
