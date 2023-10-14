@@ -1,8 +1,5 @@
 {
 "SNMessage":2,
 "SNNews":
-"
-New Config ထွက်ရှိလာပါပြီ။\
-Update လုပ်ဖို့မမေ့ပါနဲ့။\
-"
+"Hey SN Users!\n\nUpdate Config အသစ်ထွက်လာပီနော်"
 }
