@@ -1,5 +1,5 @@
 {
-"SNMessage":2,
+"SNMessage":3,
 "SNNews":
-"Hey SN Users!\n\nUpdate Config အသစ်ထွက်လာပီနော်"
+"‌‌ဟယ်လို ဘော်ဒါတို့\nv-1.1.1 Update လုပ်ဖို့မမေ့ပါနဲ့\nServer အကုန်လုံးပြင်ဆင်ပေးထားပါတယ်လို့စ်"
 }
