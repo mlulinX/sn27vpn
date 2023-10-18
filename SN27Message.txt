@@ -1,5 +1,5 @@
 {
-"SNMessage":6,
+"SNMessage":7,
 "SNNews":
-"‌‌ဟယ်လို ဘော်ဒါတို့\nConfig Update လုပ်ဖို့မမေ့ပါနဲ့\nServer အကုန်လုံးပြင်ဆင်ပေးထားပါတယ်လို့စ်"
+"‌‌Update Alert!\nUpdate Atom Yatha Servers\nUnlimied Speed & Connection"
 }
