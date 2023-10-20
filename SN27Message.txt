@@ -1,5 +1,5 @@
 {
-"SNMessage":8,
+"SNMessage":9,
 "SNNews":
-"‌‌Update Alert!\n\n𝗨𝗽𝗱𝗮𝘁𝗲 & 𝗢𝗽𝘁𝗺𝗶𝘇𝗲𝗱 𝗦𝗲𝗿𝘃𝗲𝗿𝘀\n\nUnlimited Speed & Connection\n"
+"‌‌Update Alert!\n\n▶︎ 𝗙𝗶𝘅𝗲𝗱 𝗬𝗮𝘁𝗵𝗮 𝗣𝗹𝗮𝗻 𝗦𝗲𝗿𝘃𝗲𝗿-𝟮\n\nUnlimited Speed & Connection\n"
 }
