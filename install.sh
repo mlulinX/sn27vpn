@@ -30,7 +30,7 @@ clear
 
 sed -i 's/#\?AllowTcpForwarding .*/AllowTcpForwarding yes/' /etc/ssh/sshd_config && sed -i 's/#\?X11Forwarding .*/X11Forwarding yes/' /etc/ssh/sshd_config && sed -i 's/#\?PasswordAuthentication .*/PasswordAuthentication yes/' /etc/ssh/sshd_config && sed -i 's/#\?PermitEmptyPasswords .*/PermitEmptyPasswords no/' /etc/ssh/sshd_config && sed -i 's/#\?Banner .*/Banner \/etc\/ssh\/gcp_skyn/' /etc/ssh/sshd_config && sed -i 's/#\?PermitRootLogin .*/PermitRootLogin no/' /etc/ssh/sshd_config  && sed -i 's/#\?UseDNS .*/UseDNS no/' /etc/ssh/sshd_config && sed -i 's/#\?Compression .*/Compression delayed/' /etc/ssh/sshd_config && sed -i 's/#\?ForwardX11Trusted .*/ForwardX11Trusted yes/' /etc/ssh/sshd_config &&  sed -i 's/#\?ServerAliveInterval .*/ServerAliveInterval 120/' /etc/ssh/sshd_config && /etc/init.d/ssh restart;
 
-sed -i 's/#\?Port .*/Port 443/g' /etc/ssh/sshd_config >/dev/null && sed -i 's/#\?Protocol .*/Protocol 2/g' /etc/ssh/sshd_config >/dev/null && service ssh restart
+sed -i 's/#\?Port .*/Port 80/g' /etc/ssh/sshd_config >/dev/null && sed -i 's/#\?Protocol .*/Protocol 2/g' /etc/ssh/sshd_config >/dev/null && service ssh restart
 
 echo "$servermessage" | tee /etc/ssh/gcp_skyn >/dev/null
 final=$(date "+%Y-%m-%d" -d "+$dias days")
