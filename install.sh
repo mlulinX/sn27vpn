@@ -12,8 +12,8 @@ magenta='\e[95m'#ပန်းခရမ်းရောင်
 cyan='\e[96m'   #စိမ်းပြာရောင်
 none='\e[0m'    #အရောင်မရှိ
 
-username="snxyatha"
-password="snxyatha"
+username="snxvip"
+password="snxvip"
 sshlimiter="1000"
 dias="30"
 
