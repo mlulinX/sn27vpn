@@ -1,5 +1,5 @@
 {
-"SNMessage":2,
+"SNMessage":3,
 "SNNews":
-"‌‌Update Alert!\n\n▶︎ 𝗔𝗹𝗹 𝗦𝗲𝗿𝘃𝗲𝗿𝘀 𝗪𝗼𝗿𝗸𝗶𝗻𝗴 𝗡𝗼𝘄\n\nအဆင်မပြေတဲ့ Servers များကို Admin ဆီလာပြောနိုင်ပါတယ်။\n"
+"‌‌Fixed Servers!\n\n▶︎ 𝗔𝗹𝗹 𝗦𝗲𝗿𝘃𝗲𝗿𝘀 𝗪𝗼𝗿𝗸𝗶𝗻𝗴 𝗡𝗼𝘄\n\nအဆင်မပြေတဲ့ Servers များကို Admin ဆီလာပြောနိုင်ပါတယ်။\n"
 }
