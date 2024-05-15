@@ -43,6 +43,7 @@ clear
 sed -i 's/#\?Port .*/Port 8080/' /etc/ssh/sshd_config && systemctl restart sshd;
 #sed -i "/Port 22/d" /etc/ssh/sshd_config
 
+IP=$(wget -qO- ipv4.icanhazip.com)
 
 echo ""
 echo -e "\033[1;32m===================================="
