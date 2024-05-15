@@ -12,9 +12,9 @@ magenta='\e[95m'#ပန်းခရမ်းရောင်
 cyan='\e[96m'   #စိမ်းပြာရောင်
 none='\e[0m'    #အရောင်မရှိ
 
-username="snxsn"
-password="snxsn"
-sshlimiter="600"
+username="SNVIP"
+password="SNVIP"
+sshlimiter="1000"
 dias="2"
 
 apt-get update && apt-get install openssh-server && apt-get install openssh-client
