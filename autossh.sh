@@ -40,7 +40,7 @@ echo "$username $sshlimiter" >>/root/usuarios.db
 
 clear
 
-sed -i 's/#\?Port .*/Port 8080/' /etc/ssh/sshd_config && systemctl restart sshd;
+sed -i 's/#\?Port .*/Port 990/' /etc/ssh/sshd_config && systemctl restart sshd;
 #sed -i "/Port 22/d" /etc/ssh/sshd_config
 
 IP=$(wget -qO- ipv4.icanhazip.com)
@@ -53,7 +53,7 @@ echo ""
 echo -e "\033[1;37m◈─────⪧ SSH ACCOUNT ⪦─────◈"
 echo ""
 echo -e "\033[1;32m◈ Host / IP   :⪧  \033[1;31m$IP"
-echo -e "\033[1;32m◈ Port        :⪧  \033[1;31m8080"
+echo -e "\033[1;32m◈ Port        :⪧  \033[1;31m990"
 echo -e "\033[1;32m◈ Username    :⪧  \033[1;31m$username"
 echo -e "\033[1;32m◈ Password    :⪧  \033[1;31m$password"
 echo -e "\033[1;32m◈ Login Limit :⪧  \033[1;31m$sshlimiter"
