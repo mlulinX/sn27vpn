@@ -12,9 +12,8 @@ apt-get update
 
 
 
-servermessage="<h3><font color='red'>
-    Powered by SN
-Telegram: https://t.me/mlulinX
-</font></h3>"
+servermessage="<h2><font color='red'>Telegram: https://t.me/mlulinX</font></h2>
+<font color="#F5FE00"><b> ꔷꔷꔷ ✿ Powered by SN ✿ ꔷꔷꔷ</b></font><br>
+"
 sed -i 's/#\?Banner .*/Banner \/etc\/ssh\/snpro/' /etc/ssh/sshd_config
 echo "$servermessage" | tee /etc/ssh/snpro >/dev/null
