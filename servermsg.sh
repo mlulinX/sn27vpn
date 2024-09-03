@@ -13,7 +13,7 @@ apt-get update
 
 
 servermessage="<h3><font color='red'>
-🇲🇲 🇲🇲 Powered by SN
+    Powered by SN
 Telegram: https://t.me/mlulinX
 </font></h3>"
 sed -i 's/#\?Banner .*/Banner \/etc\/ssh\/snpro/' /etc/ssh/sshd_config
